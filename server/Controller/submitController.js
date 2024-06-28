@@ -3,39 +3,45 @@ const Form = require("../Model/Form");
 exports.handleSubmit = async (req, res) => {
   try {
     const {
-      leaderName,
-      startUpName,
-      leaderPhone,
-      leaderPhoneSecondary,
-      leaderMail,
-    } = req.body || req.query.params;
-
-    console.log(leaderName,
+        leaderName,
         startUpName,
         leaderPhone,
         leaderPhoneSecondary,
-        leaderMail)
+        leaderMail,
+        teammates,
+    } = req.body || req.query.params
+
+    console.log(
+        leaderName,
+        startUpName,
+        leaderPhone,
+        leaderPhoneSecondary,
+        leaderMail,
+        teammates
+    )
 
     if (
-      !leaderName ||
-      !startUpName ||
-     ! leaderPhone ||
-     ! leaderPhoneSecondary ||
-     ! leaderMail
+        !leaderName ||
+        !startUpName ||
+        !leaderPhone ||
+        !leaderPhoneSecondary ||
+        !leaderMail ||
+        !teammates
     ) {
-      return res.status(400).json({
-        success: false,
-        message: "Please Provide all fields",
-      });
+        return res.status(400).json({
+            success: false,
+            message: 'Please Provide all fields',
+        })
     }
 
     const data = {
-      leaderName: leaderName,
-      startUpName: startUpName,
-      leaderPhone: leaderPhone,
-      leaderPhoneSecondary: leaderPhoneSecondary,
-      leaderMail: leaderMail,
-    };
+        leaderName: leaderName,
+        startUpName: startUpName,
+        leaderPhone: leaderPhone,
+        leaderPhoneSecondary: leaderPhoneSecondary,
+        leaderMail: leaderMail,
+        teammates: teammates,
+    }
 console.log(data)
     const result = await Form.create(data)
     console.log("Printing result->",result)
