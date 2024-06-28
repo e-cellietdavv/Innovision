@@ -7,6 +7,7 @@
 //       <div className="header">
 //         <h1>Welcome to Innovision 2024</h1>
 //         <p>
+
 //           An exciting competition organized by E-Cell IET DAVV. This event is designed to identify,
 //           nurture, and fund the next wave of innovative startups. Innovision will be a hybrid event,
 //           combining both online and offline components, providing a comprehensive platform for
